@@ -11,7 +11,7 @@ export const Footer = () => {
           variant="ghost"
           className="w-auto flex justify-center gap-3"
         >
-          <Image src="/physic_1/course.png" alt="shop" height={30} width={30} />
+          <Image src="/explosion.png" alt="shop" height={30} width={30} />
           Física
         </Button>
         <Button
@@ -19,19 +19,32 @@ export const Footer = () => {
           variant="ghost"
           className="w-auto flex justify-center gap-3"
         >
-          <Image src="/physic_2/course.png" alt="shop" height={30} width={30} />
-          Física II
+          <Image src="/vector.png" alt="shop" height={30} width={30} />
+          Vectores
         </Button>
         <Button
           size="lg"
           variant="ghost"
           className="w-auto flex justify-center gap-3"
         >
-          <Image src="/physic_3/course.png" alt="shop" height={30} width={30} />
-          Física III
+          <Image src="/xp.png" alt="shop" height={30} width={30} />
+          Energía
         </Button>
-        <Button size="lg" variant="ghost" className="w-auto">
-          Acerca de
+        <Button
+          size="lg"
+          variant="ghost"
+          className="w-auto flex justify-center gap-3"
+        >
+          <Image src="/sound-wave.png" alt="shop" height={30} width={30} />
+          Oscilaciones
+        </Button>
+        <Button
+          size="lg"
+          variant="ghost"
+          className="w-auto flex justify-center gap-3"
+        >
+          <Image src="/earth.png" alt="shop" height={30} width={30} />
+          ¡Y más!
         </Button>
       </div>
     </footer>

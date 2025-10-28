@@ -5,6 +5,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import Image from "next/image";
 import { Sidebar } from "./Sidebar";
 
 export const MobileSidebar = () => {
@@ -16,8 +17,9 @@ export const MobileSidebar = () => {
       <SheetContent className="p-0 z-[100]" side="left">
         <Sidebar />
       </SheetContent>
-      <SheetTitle className="text-2xl font-extrabold  text-slate-100 tracking-wider">
+      <SheetTitle className="text-2xl flex gap-3 font-extrabold  text-slate-100 tracking-wider">
         Físilab
+        <Image src="/logo.png" alt="Logo" width={40} height={40} />
       </SheetTitle>
     </Sheet>
   );

@@ -10,6 +10,7 @@ import {
 } from "@/db/queries";
 import { redirect } from "next/navigation";
 import { Unit } from "./unit";
+import { Quests } from "@/components/quests";
 
 const LearnPage = async () => {
   const userProgressData = getUserProgress();
@@ -29,7 +30,7 @@ const LearnPage = async () => {
     redirect("/courses");
   }
   return (
-    <div className="flex gap-[48px] px-6">
+    <div className="flex gap-[48px] px-6" suppressHydrationWarning>
       <FeedWrapper>
         <Header title={userProgress.activeCourse.title} />
         {units.map((unit) => (
@@ -52,6 +53,7 @@ const LearnPage = async () => {
           hearts={userProgress.hearts}
           points={userProgress.points}
         />
+        <Quests points={userProgress.points} />
       </StickyWrapper>
     </div>
   );

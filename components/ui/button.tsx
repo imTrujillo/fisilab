@@ -14,11 +14,11 @@ const buttonVariants = cva(
         default:
           "bg-white text-gray-600 border-slate-200 border-2 border-b-[4px] active:border-b-2 hover:bg-slate-100 hover:text-slate-600",
         primary:
-          "bg-lime-600 text-primary-foreground hover:bg-lime-600/90 border-lime-700/80 border-b-4 active:border-b-0",
-        primaryOutline: "bg-white text-lime-500 hover:bg-slate-100",
+          "bg-blue-600 text-primary-foreground hover:bg-blue-600/90 border-blue-700/80 border-b-4 active:border-b-0",
+        primaryOutline: "bg-white text-blue-500 hover:bg-slate-100",
         secondary:
-          "bg-amber-500 text-primary-foreground hover:bg-amber-500/90 border-amber-600 border-b-4 active:border-b-0",
-        secondaryOutline: "bg-white text-amber-600 hover:bg-slate-100",
+          "bg-yellow-500 text-primary-foreground hover:bg-yellow-500/90 border-yellow-600 border-b-4 active:border-b-0",
+        secondaryOutline: "bg-white text-yellow-500 hover:bg-slate-100",
         danger:
           "bg-rose-500 text-primary-foreground hover:bg-rose-500/90 border-rose-600 border-b-4 active:border-b-0",
         dangerOutline: "bg-white text-rose-500 hover:bg-slate-100",
@@ -27,7 +27,7 @@ const buttonVariants = cva(
         sidebar:
           "bg-transparent text-slate-500 border-2 border-transparent hover:bg-slate-100 transition-none",
         sidebarOutline:
-          "bg-lime-600/15 text-lime-600 border-lime-500 border-2 hover:bg-lime-600/20 transition-none",
+          "bg-yellow-600/15 text-yellow-600 border-yellow-500 border-2 hover:bg-yellow-600/20 transition-none",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {

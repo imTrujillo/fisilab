@@ -4,7 +4,6 @@ import { auth } from "@clerk/nextjs/server";
 import { eq } from "drizzle-orm";
 import {
   challengeProgress,
-  challenges,
   courses,
   lessons,
   units,
@@ -217,4 +216,25 @@ export const getLessonPercentage = cache(async () => {
   );
 
   return percentage;
+});
+
+export const getTopTenUsers = cache(async () => {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return [];
+  }
+
+  const data = await db.query.userProgress.findMany({
+    orderBy: (userProgress, { desc }) => [desc(userProgress.points)],
+    limit: 10,
+    columns: {
+      userId: true,
+      userName: true,
+      userImgSrc: true,
+      points: true,
+    },
+  });
+
+  return data;
 });

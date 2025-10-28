@@ -15,11 +15,11 @@ export const SidebarItem = ({ label, iconSrc, href }: Props) => {
   const pathname = usePathname();
   const active = pathname === href;
   return (
-    <Button
-      variant={active ? "sidebarOutline" : "sidebar"}
-      className="flex justify-start h-[52px]"
-    >
-      <Link href={href} className="flex justify-start items-center">
+    <Link href={href} className="flex justify-start h-[52px] cursor-pointer">
+      <Button
+        variant={active ? "sidebarOutline" : "sidebar"}
+        className="flex justify-start items-center w-full"
+      >
         <Image
           src={iconSrc}
           alt={label}
@@ -28,7 +28,7 @@ export const SidebarItem = ({ label, iconSrc, href }: Props) => {
           height={30}
         />
         {label}
-      </Link>
-    </Button>
+      </Button>
+    </Link>
   );
 };

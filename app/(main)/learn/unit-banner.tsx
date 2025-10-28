@@ -9,7 +9,7 @@ type Props = {
 
 export const UnitBanner = ({ title, description }: Props) => {
   return (
-    <div className="w-full rounded-xl bg-lime-600/70 p-5 text-white flex items-center justify-between">
+    <div className="w-full rounded-xl bg-blue-600/70 p-5 text-white flex items-center justify-between">
       <div className="space-y-2.5">
         <h3 className="text-2xl font-bold">{title}</h3>
         <p className="text-lg">{description}</p>

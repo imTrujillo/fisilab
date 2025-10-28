@@ -126,3 +126,25 @@ body,
     @apply bg-background text-foreground;
   }
 }
+
+/* Firefox (más limitado) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #152e4a transparent;
+}
+
+/* Scrollbar base (WebKit: Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #152e4a;
+  border-radius: 10px;
+}

@@ -4,10 +4,10 @@ import { UserProgress } from "@/components/user-progress";
 import { getUserProgress } from "@/db/queries";
 import Image from "next/image";
 import { redirect } from "next/navigation";
-import { Items } from "./items";
-import { Quests } from "@/components/quests";
+import { Progress } from "@/components/ui/progress";
+import { quests } from "@/lib/constants";
 
-const ShopPage = async () => {
+const QuestPage = async () => {
   const userProgressData = getUserProgress();
 
   const [userProgress] = await Promise.all([userProgressData]);
@@ -26,22 +26,40 @@ const ShopPage = async () => {
           hearts={userProgress.hearts}
           points={userProgress.points}
         />
-        <Quests points={userProgress.points} />
       </StickyWrapper>
       <FeedWrapper>
         <div className="w-full flex flex-col items-center">
-          <Image src="/shopping-cart.png" alt="shop" height={90} width={90} />
+          <Image src="/quests.png" alt="shop" height={90} width={90} />
           <h1 className="text-center font-bold text-neutral-800 text-2xl my-6">
-            Tienda
+            Misiones
           </h1>
           <p className="text-muted-foreground text-center text-lg mb-6">
-            Gasta tus puntos en más corazones.
+            Completa misiones para ganar puntos.
           </p>
-          <Items hearts={userProgress.hearts} points={userProgress.points} />
+          <ul className="w-full">
+            {quests.map((quest) => {
+              const progress = (userProgress.points / quest.value) * 100;
+
+              return (
+                <div
+                  className="flex items-center w-full p-4 gap-x-4 border-t-2"
+                  key={quest.title}
+                >
+                  <Image src="/xp.png" alt="Points" width={40} height={40} />
+                  <div className="flex flex-col gap-y-2 w-full">
+                    <p className="text-neutral-700 text-sm font-bold">
+                      {quest.title}
+                    </p>
+                    <Progress value={progress} className="h-3" />
+                  </div>
+                </div>
+              );
+            })}
+          </ul>
         </div>
       </FeedWrapper>
     </div>
   );
 };
 
-export default ShopPage;
+export default QuestPage;

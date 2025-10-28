@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import { Loader } from "lucide-react";
@@ -21,9 +23,9 @@ export const Header = () => {
             FísiLab
           </h1>
         </div>
-        <ClerkLoading>
+        {/* <ClerkLoading>
           <Loader className="h-5 w-5 text-muted-foreground animate-spin"></Loader>
-        </ClerkLoading>
+        </ClerkLoading> */}
         <ClerkLoaded>
           <SignedIn>
             <UserButton />

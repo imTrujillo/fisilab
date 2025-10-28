@@ -15,6 +15,9 @@ const font = Nunito({
 export const metadata: Metadata = {
   title: "FísiLab",
   description: "Aprende física jugando.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({

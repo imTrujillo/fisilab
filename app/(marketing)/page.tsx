@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Loader } from "lucide-react";
 import {
@@ -24,9 +26,9 @@ export default function Home() {
             Aprende física con tu amigo fiel, el ing. Miguel.
           </h2>
           <div className="flex flex-col items-center gap-y-3 max-w-[330px] w-full">
-            <ClerkLoading>
+            {/* <ClerkLoading>
               <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
-            </ClerkLoading>
+            </ClerkLoading> */}
             <ClerkLoaded>
               <SignedOut>
                 <SignUpButton mode="modal">
