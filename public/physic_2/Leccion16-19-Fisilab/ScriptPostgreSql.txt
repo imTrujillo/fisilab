@@ -1,0 +1,178 @@
+-- -----------------------------------------------------
+-- Lección 1: Energía Potencial (lesson_id: 16)
+-- -----------------------------------------------------
+
+-- Pregunta 1 (ASSIST)
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(1, 16, 'ASSIST', '¿Qué representa la energía potencial en un sistema físico?', 1);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(1, 'La energía almacenada debido a la posición o configuración del sistema.', true),
+(1, 'La energía asociada al movimiento de los objetos (energía cinética).', false),
+(1, 'La energía que se pierde en forma de calor (energía disipada).', false);
+
+-- Pregunta 2 (ASSIST)
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(2, 16, 'ASSIST', '¿Cuándo aumenta la energía potencial de un sistema?', 2);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(2, 'Cuando una fuerza conservativa realiza trabajo negativo (ej. levantar un objeto contra la gravedad).', true),
+(2, 'Cuando el sistema se mueve más rápido (aumenta la energía cinética).', false),
+(2, 'Cuando la fricción realiza trabajo (disminuye la energía mecánica).', false);
+
+-- Pregunta 3 (ASSIST)
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(3, 16, 'ASSIST', 'La energía potencial se define solo para...', 3);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(3, 'Fuerzas conservativas (como la gravedad o la fuerza elástica).', true),
+(3, 'Cualquier tipo de fuerza, incluida la fricción.', false),
+(3, 'Sistemas que están en movimiento circular.', false);
+
+-- Pregunta 4 (SELECT) - Formato de descripción en opciones
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(4, 16, 'SELECT', '¿Cuál de estas situaciones describe principalmente una conversión de energía potencial a energía cinética?', 4);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(4, 'Un vagón de montaña rusa descendiendo desde el punto más alto.', true),
+(4, 'Un automóvil frenando hasta detenerse.', false),
+(4, 'Un resorte siendo comprimido por una fuerza externa.', false);
+
+-- Pregunta 5 (SELECT) - CORREGIDA: Ahora la pregunta pide identificar la situación
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(5, 16, 'SELECT', '¿Cuál de estas situaciones describe principalmente el almacenamiento de energía potencial elástica?', 5);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(5, 'Un arquero tensando la cuerda de un arco.', true),
+(5, 'Un libro descansando sobre una mesa alta.', false),
+(5, 'Un coche moviéndose a velocidad constante en una carretera plana.', false);
+
+
+-- -----------------------------------------------------
+-- Lección 2: Fuerzas Conservativas y No Conservativas (lesson_id: 17)
+-- -----------------------------------------------------
+
+-- Pregunta 6 (ASSIST)
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(6, 17, 'ASSIST', '¿Cuál es la característica principal de una fuerza conservativa?', 1);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(6, 'El trabajo que realiza es independiente de la trayectoria; solo depende de los puntos inicial y final.', true),
+(6, 'Siempre disipa la energía mecánica del sistema en forma de calor.', false),
+(6, 'Solo actúa sobre objetos que están en reposo.', false);
+
+-- Pregunta 7 (ASSIST)
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(7, 17, 'ASSIST', 'Si un objeto realiza un viaje de ida y vuelta (vuelve al punto de partida) bajo la acción *única* de una fuerza conservativa, ¿cuál es el trabajo total realizado por esa fuerza?', 2);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(7, 'Cero.', true),
+(7, 'Positivo, igual a la energía cinética ganada.', false),
+(7, 'Negativo, igual a la energía perdida.', false);
+
+-- Pregunta 8 (ASSIST)
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(8, 17, 'ASSIST', '¿Por qué la fuerza de fricción (rozamiento) se considera una fuerza no conservativa?', 3);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(8, 'Porque el trabajo que realiza depende de la longitud de la trayectoria y disipa energía mecánica.', true),
+(8, 'Porque siempre apunta hacia el centro de la Tierra.', false),
+(8, 'Porque está relacionada con la fuerza normal.', false);
+
+-- Pregunta 9 (SELECT) - CORREGIDA: Ahora la pregunta describe la situación
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(9, 17, 'SELECT', 'Si un bloque se desliza hacia abajo por una rampa SIN fricción, ¿qué ocurre con su energía mecánica total?', 4);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(9, 'Se conserva (la energía potencial se convierte en cinética).', true),
+(9, 'Disminuye debido a la acción de la gravedad.', false),
+(9, 'Aumenta debido a la acción de la fuerza normal.', false);
+
+-- Pregunta 10 (SELECT) - CORREGIDA: Ahora la pregunta describe la situación
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(10, 17, 'SELECT', 'Un péndulo real que oscila en el aire eventualmente se detiene. ¿Qué fuerza no conservativa es la principal responsable de esto?', 5);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(10, 'La resistencia del aire (fricción).', true),
+(10, 'La tensión de la cuerda.', false),
+(10, 'La fuerza de la gravedad.', false);
+
+
+-- -----------------------------------------------------
+-- Lección 3: Energía Potencial Gravitacional (lesson_id: 18)
+-- -----------------------------------------------------
+
+-- Pregunta 11 (ASSIST)
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(11, 18, 'ASSIST', '¿Cómo se define la energía potencial gravitacional ($U_g$) cerca de la superficie de la Tierra?', 1);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(11, 'Como el producto de la masa, la gravedad y la altura ($m \cdot g \cdot h$).', true),
+(11, 'Como la mitad de la masa por la velocidad al cuadrado ($\frac{1}{2} m v^2$).', false),
+(11, 'Como la fuerza de gravedad dividida por la altura ($mg / h$).', false);
+
+-- Pregunta 12 (ASSIST)
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(12, 18, 'ASSIST', '¿Es la energía potencial gravitacional una propiedad de un solo objeto?', 2);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(12, 'No, es una propiedad del sistema de dos o más objetos (ej. la Tierra y el objeto) debido a su interacción.', true),
+(12, 'Sí, solo depende de la masa del objeto, independientemente de la Tierra.', false),
+(12, 'Sí, solo depende de la altura del objeto, independientemente de su masa.', false);
+
+-- Pregunta 13 (ASSIST)
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(13, 18, 'ASSIST', 'Si levantas un libro del suelo a un estante que está al doble de altura que una mesa, ¿cuánta energía potencial gravitacional gana (respecto al suelo) en comparación con levantarlo solo a la mesa?', 3);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(13, 'El doble.', true),
+(13, 'Cuatro veces más.', false),
+(13, 'La misma cantidad, porque la masa no cambia.', false);
+
+-- Pregunta 14 (SELECT) - CORREGIDA: Ahora la pregunta describe la situación
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(14, 18, 'SELECT', 'Dos objetos (A y B) tienen la misma masa. El objeto A está a 100 metros de altura y el objeto B a 10 metros. ¿Cuál tiene más energía potencial gravitacional (respecto al suelo)?', 4);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(14, 'El objeto A (debido a su mayor altura).', true),
+(14, 'El objeto B (porque está más cerca del suelo).', false),
+(14, 'Ambos tienen la misma, porque sus masas son iguales.', false);
+
+-- Pregunta 15 (SELECT) - (Este formato ya era correcto)
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(15, 18, 'SELECT', 'Un objeto cae libremente (sin fricción). ¿Qué ocurre con su energía potencial gravitacional (EPG) y su energía cinética (EC) durante la caída?', 5);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(15, 'La EPG disminuye (se convierte) y la EC aumenta.', true),
+(15, 'La EPG aumenta y la EC disminuye.', false),
+(15, 'Ambas se mantienen constantes durante la caída.', false);
+
+
+-- -----------------------------------------------------
+-- Lección 4: Energía Potencial Elástica (lesson_id: 19)
+-- -----------------------------------------------------
+
+-- Pregunta 16 (ASSIST)
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(16, 19, 'ASSIST', '¿En qué tipo de objetos se almacena la energía potencial elástica?', 1);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(16, 'En objetos que pueden deformarse (estirarse o comprimirse) y luego recuperar su forma original, como un resorte o una banda elástica.', true),
+(16, 'En cualquier objeto que esté a cierta altura del suelo.', false),
+(16, 'Solo en objetos que están girando.', false);
+
+-- Pregunta 17 (ASSIST)
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(17, 19, 'ASSIST', 'Según la Ley de Hooke, ¿de qué depende la energía potencial elástica ($U_e$) almacenada en un resorte ideal?', 2);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(17, 'De la constante elástica (k) y del cuadrado de la deformación (x²), ($U_e = \frac{1}{2} k x^2$).', true),
+(17, 'Solo de la longitud original del resorte.', false),
+(17, 'De la masa del objeto unido al resorte y la gravedad.', false);
+
+-- Pregunta 18 (ASSIST)
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(18, 19, 'ASSIST', 'Si comprimes un resorte una distancia 'x' y luego lo comprimes una distancia '2x' (el doble), ¿cuánta más energía almacena?', 3);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(18, 'Cuatro veces más (porque depende de $x^2$).', true),
+(18, 'El doble de energía (porque la distancia es el doble).', false),
+(18, 'La mitad de energía (porque está más comprimido).', false);
+
+-- Pregunta 19 (SELECT) - CORREGIDA: Ahora la pregunta pide identificar la situación
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(19, 19, 'SELECT', '¿Cuál de las siguientes actividades es un ejemplo claro de almacenamiento y liberación de energía potencial elástica?', 4);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(19, 'Saltar en un trampolín (cama elástica).', true),
+(19, 'Dejar caer una piedra desde un acantilado.', false),
+(19, 'Frenar un coche (que convierte energía cinética en calor).', false);
+
+-- Pregunta 20 (SELECT) - (Este formato ya era correcto)
+INSERT INTO challenges (id, lesson_id, "type", question, "order") VALUES
+(20, 19, 'SELECT', '¿En qué punto de su oscilación un sistema masa-resorte (horizontal, sin fricción) tiene su máxima energía potencial elástica?', 5);
+INSERT INTO challenge_options (challenge_id, text, correct) VALUES
+(20, 'En los puntos de máxima compresión y máximo estiramiento (la amplitud).', true),
+(20, 'En el punto de equilibrio (donde la fuerza neta es cero).', false),
+(20, 'Justo a la mitad entre el equilibrio y la amplitud.', false);
