@@ -16,7 +16,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="max-w-[980px] mx-auto flex-1 w-full flex flex-col lg:flex-row items-center justify-center p-4 gap-2">
-      <Image src="/header-section.jpg" width={400} height={400} alt="hero" />
+      <Image src="/header-section.png" width={400} height={400} alt="hero" />
       <div className="relative w-[240px] lg:w-[424px] lg:h-[424px] mb-8 lg:mb-0">
         <div className="flex flex-col items-center justify-center gap-y-8 h-full ">
           <h1 className="text-xl lg:text-3xl font-bold text-neutral-600 max-w-[420px] text-center">
