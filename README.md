@@ -1,36 +1,177 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Proyecto: Plataforma Interactiva para Aprender Física Universitaria
 
-## Getting Started
+<img src="screenshots/logo.png" width="200" alt="Logo del proyecto">
 
-First, run the development server:
+Aplicación web inspirada en la metodología didáctica de *Duolingo*, diseñada para facilitar el aprendizaje de la **Física I, II y III** del plan de estudios de Ingeniería en Sistemas Computacionales de la **Universidad Evangélica de El Salvador**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+El proyecto utiliza un diseño moderno, aprendizaje progresivo y retroalimentación inmediata, con contenidos basados en **Física Universitaria – Sears & Zemansky**.
+
+---
+
+## 🚀 Tecnologías principales
+
+* **Next.js 14 (App Router)**
+* **React**
+* **TypeScript**
+* **Clerk** – Autenticación y gestión de usuarios
+* **Neon Database (PostgreSQL Serverless)** – Base de datos principal
+* **Prisma ORM** – Modelado y acceso a datos
+* **Shadcn/UI** – Componentes estilizados
+* **Tailwind CSS**
+* **Vercel** – Hosting recomendado
+
+La estructura y lógica se basan en el curso:
+**Duolingo Clone – Code with Antonio**
+[https://www.codewithantonio.com/projects/duolingo-clone](https://www.codewithantonio.com/projects/duolingo-clone)
+
+---
+
+## 📘 Objetivo del Proyecto
+
+![App](https://fisilab.vercel.app/screenshots/1.png)
+
+Diseñar una aplicación web interactiva enfocada en mejorar la comprensión conceptual y el desarrollo de habilidades analíticas de los estudiantes universitarios de física, mediante una plataforma gamificada, estructurada en:
+
+* Cursos →
+* Unidades →
+* Lecciones →
+* Ejercicios →
+* Respuestas
+
+Además, la plataforma registra:
+
+* Progreso por usuario
+* Progreso por lección
+* Estadísticas de rendimiento
+
+---
+
+## 📚 Contenidos del Curso
+
+![Contenidos](https://fisilab.vercel.app/screenshots/6.png)
+
+### Física I – Mecánica
+
+* Definición de fuerza
+* Masa y peso
+* Primera Ley de Newton
+* Segunda Ley de Newton
+* Tercera Ley de Newton
+* Energía cinética
+* Trabajo
+* Potencia
+* Fuerza y presión
+* Presión hidráulica
+
+### Física II – Energía y Oscilaciones
+
+* Energía potencial
+* Fuerzas conservativas y no conservativas
+* Energía potencial gravitacional
+* Energía potencial elástica
+* Movimiento Armónico Simple
+* Oscilaciones
+* Péndulo simple
+* Péndulo físico
+
+### Física III – (Placeholder futuros módulos)
+
+* Sección destinada para ampliar a Electricidad, Magnetismo, Ondas y Termodinámica.
+
+---
+
+## 🏗️ Arquitectura del Proyecto
+
+![Curso](https://fisilab.vercel.app/screenshots/2.png)
+
+
+![Lección](https://fisilab.vercel.app/screenshots/3.png)
+
+
+### 🧩 Entidades del Sistema
+
+| Entidad                  | Descripción                                                  |
+| ------------------------ | ------------------------------------------------------------ |
+| **Curso**                | Contenedor general de módulos temáticos (Física I, II, III). |
+| **Unidad**               | Agrupación de lecciones dentro de cada curso.                |
+| **Lección**              | Conjunto de ejercicios interactivos.                         |
+| **Ejercicio**            | Preguntas tipo opción múltiple, completar, relacionar, etc.  |
+| **Respuestas**           | Alternativas de cada ejercicio.                              |
+| **Usuario**              | Autenticado mediante Clerk.                                  |
+| **Progreso del Usuario** | Estadísticas generales de aprendizaje.                       |
+| **Progreso de Lección**  | Seguimiento detallado del avance.                            |
+
+---
+
+## 🔐 Autenticación con Clerk
+
+![Autenticación](https://fisilab.vercel.app/screenshots/4.png)
+
+El proyecto usa Clerk para:
+
+* Registro de usuarios
+* Inicio de sesión
+* Sesiones seguras
+* Middleware para proteger rutas
+* Perfil del usuario
+
+Configuración mediante variables de entorno:
+
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🗄️ Base de Datos (Neon + Prisma)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![DB](https://fisilab.vercel.app/screenshots/5.png)
 
-## Learn More
+Modelo inspirado en el curso de Antonio, adaptado a contenidos universitarios.
 
-To learn more about Next.js, take a look at the following resources:
+Ejemplo parcial:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```prisma
+model Course {
+  id        String   @id @default(cuid())
+  title     String
+  units     Unit[]
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+La base se ejecuta en Neon (serverless PostgreSQL) con prisma migrations.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ▶️ Scripts para Desarrollo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+npm install
+npm run dev
+```
+
+Build para producción:
+
+```
+npm run build
+npm start
+```
+
+---
+
+## 🌐 Despliegue
+
+La configuración recomendada:
+
+* **Vercel** para la web
+* **NeonDB** para la base de datos
+* **Clerk** para autenticación
+
+Asegúrate de configurar correctamente:
+
+* Variables de entorno
+* URL callback de Clerk
+* `DATABASE_URL` de Neon
+
+---
