@@ -1,10 +1,9 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Loader } from "lucide-react";
 import Image from "next/image";
 import { SidebarItem } from "./sidebar-item";
-import { ClerkLoaded, ClerkLoading, UserButton } from "@clerk/nextjs";
+import { ClerkLoaded, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 
 type Props = {

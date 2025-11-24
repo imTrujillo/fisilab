@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import Image from "next/image";
-import { Sidebar } from "./Sidebar";
+import { Sidebar } from "./sidebar";
 
 export const MobileSidebar = () => {
   return (

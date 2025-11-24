@@ -4,56 +4,61 @@ import { getIsAdmin } from "@/lib/admin";
 import { eq } from "drizzle-orm";
 import { NextResponse } from "next/server";
 
-export const GET = async (
+export async function GET(
   req: Request,
-  { params }: { params: { unitId: number } }
-) => {
+  context: { params: Promise<{ unitId: string }> }
+) {
+  const { unitId } = await context.params;
+
   const isAdmin = await getIsAdmin();
-  if (!isAdmin) {
-    return new NextResponse("Unauthorized", { status: 403 });
-  }
+  if (!isAdmin) return new NextResponse("Unauthorized", { status: 403 });
+
+  const id = Number(unitId);
+  if (isNaN(id)) return new NextResponse("Invalid id", { status: 400 });
 
   const data = await db.query.units.findFirst({
-    where: eq(units.id, params.unitId),
+    where: eq(units.id, id),
   });
 
   return NextResponse.json(data);
-};
+}
 
-export const PUT = async (
+export async function PUT(
   req: Request,
-  { params }: { params: { unitId: number } }
-) => {
+  context: { params: Promise<{ unitId: string }> }
+) {
+  const { unitId } = await context.params;
+
   const isAdmin = await getIsAdmin();
-  if (!isAdmin) {
-    return new NextResponse("Unauthorized", { status: 403 });
-  }
+  if (!isAdmin) return new NextResponse("Unauthorized", { status: 403 });
+
+  const id = Number(unitId);
+  if (isNaN(id)) return new NextResponse("Invalid id", { status: 400 });
 
   const body = await req.json();
+
   const data = await db
     .update(units)
-    .set({
-      ...body,
-    })
-    .where(eq(units.id, params.unitId))
+    .set(body)
+    .where(eq(units.id, id))
     .returning();
 
-  return NextResponse.json(data[0]);
-};
+  return NextResponse.json(data[0] ?? null);
+}
 
-export const DELETE = async (
+export async function DELETE(
   req: Request,
-  { params }: { params: { unitId: number } }
-) => {
+  context: { params: Promise<{ unitId: string }> }
+) {
+  const { unitId } = await context.params;
+
   const isAdmin = await getIsAdmin();
-  if (!isAdmin) {
-    return new NextResponse("Unauthorized", { status: 403 });
-  }
+  if (!isAdmin) return new NextResponse("Unauthorized", { status: 403 });
 
-  const data = await db
-    .delete(units)
-    .where(eq(units.id, params.unitId))
-    .returning();
+  const id = Number(unitId);
+  if (isNaN(id)) return new NextResponse("Invalid id", { status: 400 });
 
-  return NextResponse.json(data[0]);
-};
+  const data = await db.delete(units).where(eq(units.id, id)).returning();
+
+  return NextResponse.json(data[0] ?? null);
+}
