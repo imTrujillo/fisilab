@@ -1,6 +1,6 @@
 # Proyecto: Plataforma Interactiva para Aprender Física Universitaria
 
-<img src="screenshots/logo.png" width="200" alt="Logo del proyecto">
+<img src="https://fisilab.vercel.app/logo.png" width="200" alt="Logo del proyecto">
 
 Aplicación web inspirada en la metodología didáctica de *Duolingo*, diseñada para facilitar el aprendizaje de la **Física I, II y III** del plan de estudios de Ingeniería en Sistemas Computacionales de la **Universidad Evangélica de El Salvador**.
 
