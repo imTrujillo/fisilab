@@ -175,3 +175,11 @@ Asegúrate de configurar correctamente:
 * `DATABASE_URL` de Neon
 
 ---
+
+## 👥 Creadores
+
+1. Luis Martínez → https://github.com/BlckXI
+2. Josué Melara → https://github.com/JosuMelara21
+3. José González
+4. Steven Trujillo → https://github.com/imTrujillo
+5. Ernesto Zavaleta
