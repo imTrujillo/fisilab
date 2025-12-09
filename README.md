@@ -180,6 +180,6 @@ Asegúrate de configurar correctamente:
 
 1. Luis Martínez → https://github.com/BlckXI
 2. Josué Melara → https://github.com/JosuMelara21
-3. José González
+3. José González → https://github.com/jose76s
 4. Steven Trujillo → https://github.com/imTrujillo
-5. Ernesto Zavaleta
+5. Ernesto Zavaleta → https://github.com/lIlIIIIIIllllI
